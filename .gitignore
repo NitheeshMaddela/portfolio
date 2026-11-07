@@ -1,0 +1,21 @@
+# Local agent tools, settings, design previews and generated review files
+/.agents/
+/.codex/
+/.impeccable/
+
+# Local editor settings and temporary files
+/.vscode/
+/.idea/
+*.swp
+*.swo
+*~
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+
+# Local secrets and logs
+.env
+.env.*
+!.env.example
+*.log
