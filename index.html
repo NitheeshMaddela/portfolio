@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Nitheesh Maddela — AI/ML Software Engineer and Assistant Manager, Data &amp; AI at EY GDS. Production RAG, LangGraph agents, MLOps and multicloud Python systems." />
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#14171b" />
   <title>Nitheesh Maddela — AI/ML Software Engineer | EY GDS</title>
   <link rel="preload" href="assets/fonts/HankenGrotesk-Variable.ttf" as="font" type="font/ttf" crossorigin />
   <link rel="stylesheet" href="assets/vendor/lenis/lenis-1.3.27.css" />
@@ -17,16 +17,21 @@
       font-display: swap;
     }
     :root {
-      color-scheme: light;
-      --paper: #ffffff;
-      --ink: #252522;
-      --secondary: #62625c;
-      --rust: #a13f2b;
-      --rust-dark: #7f2f20;
-      --wash: #f1f1ed;
-      --line: #d6d6ce;
-      --selection: #f1d4c7;
+      color-scheme: dark;
+      --paper: #14171b;
+      --ink: #edf0f4;
+      --secondary: #a6b0bb;
+      --accent: #e6a17c;
+      --accent-hover: #f4bb99;
+      --on-accent: #181b1f;
+      --wash: #1d2229;
+      --line: #3b4652;
+      --line-strong: #687786;
+      --selection: #634534;
+      --workflow-bg: #222a33;
+      --workflow-text: #d4dbe3;
       --font: 'Hanken Grotesk', 'Segoe UI', sans-serif;
+      --font-data: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
       --space-1: 8px;
       --space-2: 16px;
       --space-3: 24px;
@@ -44,11 +49,11 @@
     body { margin: 0; background: var(--paper); color: var(--ink); font: 400 1rem/1.65 var(--font); -webkit-font-smoothing: antialiased; }
     ::selection { background: var(--selection); color: var(--ink); }
     a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.25em; }
-    a:hover { color: var(--rust); }
+    a:hover { color: var(--accent); }
     button, input, textarea { font: inherit; }
     button, a, summary, input, textarea { -webkit-tap-highlight-color: transparent; }
-    a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--rust); outline-offset: 5px; }
-    input:focus-visible, textarea:focus-visible { outline: 2px solid var(--rust); outline-offset: 2px; }
+    a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+    input:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
     button { cursor: pointer; }
     h1, h2, h3, p, figure { margin: 0; }
     h1, h2, h3 { font-weight: 600; text-wrap: balance; }
@@ -62,40 +67,49 @@
     .wordmark { font-weight: 600; font-size: 1rem; text-decoration: none; }
     .wordmark span { color: var(--secondary); font-weight: 400; margin-left: 12px; }
     .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; margin: 0; padding: 0; }
-    .nav-links a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; font-size: 0.92rem; }
-    .nav-links a[aria-current] { color: var(--rust); text-decoration: underline; }
-    .nav-resume { gap: 8px; }
+    .nav-links a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; font-size: 0.92rem; color: var(--secondary); }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-links a[aria-current] { color: var(--accent); text-decoration: underline; }
+    .nav-links .nav-resume { gap: 12px; padding: 0 16px; border: 1px solid var(--line-strong); color: var(--ink); }
+    .nav-links .nav-resume:hover { border-color: var(--accent); color: var(--accent); }
     .icon { width: 18px; height: 18px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-    .menu-button { display: none; background: none; color: var(--ink); border: 1px solid var(--line); padding: 10px 14px; min-height: 44px; }
+    .menu-button { display: none; background: none; color: var(--ink); border: 1px solid var(--line-strong); padding: 10px 14px; min-height: 44px; }
+    .menu-button:hover { border-color: var(--accent); color: var(--accent); }
     .intro { padding-top: var(--space-5); padding-bottom: var(--space-6); }
-    .intro h1 { font-size: clamp(3rem, 7.6vw, 6rem); font-weight: 600; line-height: 1.08; letter-spacing: -0.04em; }
-    .intro h1 .period { color: var(--rust); }
+    .intro h1 { font-size: clamp(3rem, 7.6vw, 6rem); font-weight: 550; line-height: 1.08; letter-spacing: -0.04em; }
+    .intro h1 .period { color: var(--accent); }
     .intro-copy { display: grid; grid-template-columns: 5fr 7fr; gap: var(--space-6); margin-top: var(--space-4); }
     .intro-role { font-size: 1.25rem; font-weight: 500; line-height: 1.5; max-width: 25ch; }
     .intro-role span { display: block; color: var(--secondary); font-size: 0.95rem; font-weight: 400; margin-top: 10px; }
     .intro-summary { color: var(--secondary); font-size: 1.08rem; max-width: 64ch; }
     .intro-summary a { color: var(--ink); }
     .intro-links { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 20px; }
-    .text-link { display: inline-flex; gap: 8px; align-items: center; min-height: 44px; color: var(--rust); font-weight: 500; }
-    .section-header { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; padding-top: 32px; border-top: 1px solid var(--ink); margin-bottom: 40px; }
+    .intro-links .resume-action { min-height: 48px; padding: 10px 18px; background: var(--accent); color: var(--on-accent); text-decoration: none; }
+    .intro-links .resume-action:hover { background: var(--accent-hover); }
+    .text-link { display: inline-flex; gap: 8px; align-items: center; min-height: 44px; color: var(--accent); font-weight: 500; }
+    .section-header { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; padding-top: 32px; border-top: 1px solid var(--line-strong); margin-bottom: 40px; }
     .section-header h2 { font-size: 1.8rem; letter-spacing: -0.025em; line-height: 1.2; }
     .section-header > p { color: var(--secondary); max-width: 38ch; font-size: 0.92rem; }
     .project-spread { display: grid; grid-template-columns: 5fr 7fr; column-gap: var(--space-6); row-gap: var(--space-4); align-items: start; padding-bottom: 64px; }
     .project-copy h3 { font-size: clamp(2rem, 3vw, 2.75rem); line-height: 1.15; letter-spacing: -0.03em; max-width: 18ch; margin-bottom: 24px; }
     .project-copy > p { max-width: 65ch; color: var(--secondary); }
-    .project-copy .project-stack { margin-top: 24px; font-size: 0.87rem; color: var(--secondary); }
+    .project-copy .project-stack { margin-top: 24px; font-family: var(--font-data); font-size: 0.76rem; line-height: 1.9; color: var(--secondary); }
     .project-detail { margin-top: 28px; border-top: 1px solid var(--line); padding-top: 8px; }
-    .project-detail summary { list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 20px; min-height: 56px; color: var(--rust); cursor: pointer; font-weight: 500; }
+    .project-detail summary { list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 20px; min-height: 56px; color: var(--accent); cursor: pointer; font-weight: 500; }
     .project-detail summary::-webkit-details-marker { display: none; }
     .project-detail summary .icon { transition: transform 240ms var(--ease); }
     .project-detail[open] summary .icon { transform: rotate(45deg); }
     .project-detail p { color: var(--secondary); padding: 0 0 16px; font-size: 0.95rem; }
-    .architecture { padding: 32px 40px 24px; background: var(--wash); }
+    .architecture { padding: 32px 40px 24px; background: var(--wash); border: 1px solid var(--line); }
     .pipeline { display: grid; justify-items: center; gap: 28px; }
-    .pipeline-step { position: relative; width: 100%; text-align: center; background: var(--paper); border: 1px solid var(--line); padding: 12px; font-size: 0.95rem; }
-    .pipeline-step:not(:first-child)::before { content: ''; position: absolute; width: 1px; height: 28px; background: var(--secondary); left: 50%; top: -29px; }
+    .pipeline-step { position: relative; width: 100%; text-align: center; background: var(--paper); border: 1px solid var(--line-strong); padding: 14px 16px; font-size: 0.95rem; }
+    .pipeline-step:not(:first-child)::before { content: ''; position: absolute; width: 1px; height: 28px; background: var(--line-strong); left: 50%; top: -29px; }
+    .pipeline-step:not(:last-child)::after { content: ''; position: absolute; width: 5px; height: 5px; border: 1px solid var(--accent); background: var(--wash); left: calc(50% - 2px); bottom: -4px; z-index: 1; }
     .pipeline-step small { display: block; color: var(--secondary); font-size: 0.8rem; margin-top: 3px; }
-    .pipeline-step.retrieval { border-color: var(--rust); color: var(--rust); }
+    .pipeline-step.retrieval { border-color: var(--accent); color: var(--accent); }
+    .retrieval-methods { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); color: var(--ink); }
+    .retrieval-methods span { font-family: var(--font-data); font-size: 0.8rem; }
+    .retrieval-methods small { font-family: var(--font); font-size: 0.78rem; }
     figcaption { margin-top: 24px; font-size: 0.8rem; color: var(--secondary); }
     .project-note { padding: 24px 0; border-top: 1px solid var(--line); }
     .project-note dt { font-weight: 500; margin-bottom: 12px; }
@@ -105,11 +119,11 @@
     .project-reversed { grid-template-columns: 7fr 5fr; }
     .project-reversed .project-copy { grid-column: 2; grid-row: 1; }
     .project-reversed .project-evidence { grid-column: 1; grid-row: 1; }
-    .review-path { display: grid; grid-template-columns: repeat(3, 1fr); list-style: none; margin: 0; padding: 0; background: var(--ink); color: var(--paper); }
-    .review-path li { padding: 28px 20px; border-right: 1px solid #53534c; }
+    .review-path { display: grid; grid-template-columns: repeat(3, 1fr); list-style: none; margin: 0; padding: 0; background: var(--workflow-bg); color: var(--ink); border: 1px solid var(--line); }
+    .review-path li { padding: 28px 20px; border-right: 1px solid var(--line); }
     .review-path li:last-child { border: 0; }
-    .review-path small { display: block; margin-top: 12px; color: #d3d3c8; font-size: 0.85rem; }
-    .review-result { padding-top: 20px; color: var(--rust); font-size: 1.1rem; }
+    .review-path small { display: block; margin-top: 12px; color: var(--workflow-text); font-size: 0.85rem; }
+    .review-result { padding-top: 20px; color: var(--accent); font-size: 1.1rem; }
     .evaluation { margin: 0; display: grid; }
     .evaluation div { display: grid; grid-template-columns: 100px 1fr; gap: 24px; padding: 20px 0; border-top: 1px solid var(--line); }
     .evaluation dt { font-weight: 500; }
@@ -122,15 +136,15 @@
     .prose strong { color: var(--ink); font-weight: 500; }
     .career-row { display: grid; grid-template-columns: 3fr 9fr; gap: var(--space-5); padding: 32px 0; border-bottom: 1px solid var(--line); }
     .career-row:first-of-type { padding-top: 0; }
-    .career-date { font-variant-numeric: tabular-nums; color: var(--secondary); font-size: 0.9rem; padding-top: 4px; }
+    .career-date { font-family: var(--font-data); font-variant-numeric: tabular-nums; color: var(--secondary); font-size: 0.78rem; padding-top: 4px; }
     .career-content h3 { font-size: 1.25rem; line-height: 1.35; letter-spacing: -0.015em; }
-    .company { margin-top: 8px; color: var(--rust); }
+    .company { margin-top: 8px; color: var(--accent); }
     .career-content ul { padding-left: 19px; margin: 24px 0 0; max-width: 72ch; color: var(--secondary); font-size: 0.95rem; }
     .career-content li { padding-left: 8px; margin-bottom: 12px; }
     .career-content li:last-child { margin-bottom: 0; }
     .impact-list { margin: 0; }
     .impact-list > div { display: grid; grid-template-columns: 3fr 4fr 5fr; gap: 32px; align-items: baseline; border-bottom: 1px solid var(--line); padding: 24px 0; }
-    .impact-list dt { font-size: 1.5rem; font-weight: 500; color: var(--rust); font-variant-numeric: tabular-nums; }
+    .impact-list dt { font-family: var(--font-data); font-size: 1.4rem; font-weight: 500; color: var(--accent); font-variant-numeric: tabular-nums; }
     .impact-list dd { margin: 0; }
     .impact-list dd:last-child { color: var(--secondary); font-size: 0.95rem; }
     .expertise-row { display: grid; grid-template-columns: 4fr 8fr; gap: 48px; padding: 24px 0; border-bottom: 1px solid var(--line); }
@@ -156,11 +170,11 @@
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
     .form-group { margin-bottom: 24px; }
     label { display: block; margin-bottom: 8px; font-size: 0.9rem; }
-    input, textarea { width: 100%; color: var(--ink); background: var(--paper); border: 1px solid #92928a; border-radius: 0; padding: 12px; caret-color: var(--rust); }
+    input, textarea { width: 100%; color: var(--ink); background: var(--paper); border: 1px solid var(--line-strong); border-radius: 0; padding: 12px; caret-color: var(--accent); }
     input::placeholder, textarea::placeholder { color: var(--secondary); opacity: 1; }
     textarea { resize: vertical; min-height: 140px; display: block; }
-    .form-submit { display: inline-flex; gap: 20px; align-items: center; justify-content: center; border: 0; border-radius: 0; padding: 14px 24px; background: var(--rust); color: var(--paper); font-weight: 500; min-height: 48px; }
-    .form-submit:hover { background: var(--rust-dark); }
+    .form-submit { display: inline-flex; gap: 20px; align-items: center; justify-content: center; border: 0; border-radius: 0; padding: 14px 24px; background: var(--accent); color: var(--on-accent); font-weight: 500; min-height: 48px; }
+    .form-submit:hover { background: var(--accent-hover); }
     .form-submit:active { background: var(--ink); }
     .form-note { margin-top: 16px; font-size: 0.82rem; color: var(--secondary); max-width: 65ch; }
     .site-footer { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-block: 28px; font-size: 0.82rem; color: var(--secondary); }
@@ -171,7 +185,7 @@
       .intro-copy, .project-spread, .about-layout, .contact-layout { column-gap: 40px; }
       .architecture { padding: 24px; }
       .review-path { grid-template-columns: 1fr; }
-      .review-path li { padding: 16px 24px; border-right: 0; border-bottom: 1px solid #53534c; }
+      .review-path li { padding: 16px 24px; border-right: 0; border-bottom: 1px solid var(--line); }
       .review-path small { margin-top: 4px; }
     }
     @media (max-width: 760px) {
@@ -184,6 +198,7 @@
       .js .nav-links { display: none; position: absolute; left: 0; right: 0; top: 74px; padding: 12px var(--page-gutter) 20px; background: var(--paper); border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 0; }
       .js .nav-links.open { display: flex; }
       .nav-links a { min-height: 48px; }
+      .nav-links .nav-resume { margin-top: 8px; justify-content: space-between; }
       .intro { padding-top: 40px; padding-bottom: 48px; }
       .intro h1 { max-width: 9ch; font-size: clamp(3rem, 12vw, 5.5rem); }
       .intro-copy, .project-spread, .about-layout, .contact-layout, .credentials { grid-template-columns: 1fr; gap: 32px; }
@@ -198,8 +213,6 @@
       .project-reversed .project-copy, .project-reversed .project-evidence { grid-column: auto; grid-row: auto; }
       .project-secondary { padding-top: 32px; }
       .architecture { padding: 24px; }
-      .review-path { grid-template-columns: repeat(3, 1fr); }
-      .review-path li { padding: 16px; border-right: 1px solid #53534c; border-bottom: 0; }
       .content-section { padding-top: 48px; }
       .about-statement { max-width: 32ch; }
       .career-row { grid-template-columns: 1fr; gap: 16px; padding: 28px 0; }
@@ -214,8 +227,6 @@
     }
     @media (max-width: 420px) {
       .form-row { grid-template-columns: 1fr; gap: 0; }
-      .review-path { grid-template-columns: 1fr; }
-      .review-path li { border-right: 0; border-bottom: 1px solid #53534c; }
       .impact-list > div { grid-template-columns: 80px 1fr; gap: 8px 16px; }
       .evaluation div { grid-template-columns: 72px 1fr; gap: 16px; }
     }
@@ -224,6 +235,7 @@
       .project-detail summary .icon { transition: none; }
     }
     @media print {
+      :root { color-scheme: light; --paper: #ffffff; --ink: #15191f; --secondary: #4d5968; --accent: #914125; --accent-hover: #6d301c; --on-accent: #ffffff; --wash: #eef1f4; --line: #c5cdd6; --line-strong: #687786; --workflow-bg: #e8edf2; --workflow-text: #33404e; }
       .site-header { position: static; }
       nav, .menu-button, form, .intro-links, .footer-links { display: none !important; }
       .container { width: 100%; }
@@ -260,7 +272,7 @@
         <div>
           <p class="intro-summary">I build Python services and production GenAI systems, with 4+ years in software engineering and 3 years focused on AI agents, RAG and MLOps. From a 100K+ document platform to workflows that cut manual effort by ~60%, I take AI systems from architecture through deployment and evaluation.</p>
           <div class="intro-links">
-            <a class="text-link" href="Nitheesh_Maddela_Resume.docx" download>Download resume<svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M5 17v4h14v-4"/></svg></a>
+            <a class="text-link resume-action" href="Nitheesh_Maddela_Resume.docx" download>Download resume<svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M5 17v4h14v-4"/></svg></a>
             <a class="text-link" href="mailto:nitheeshmvs88@gmail.com">Get in touch<svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"/></svg></a>
           </div>
         </div>
@@ -287,7 +299,7 @@
           <figure class="architecture">
             <div class="pipeline" role="list" aria-label="RAG processing stages">
               <div class="pipeline-step" role="listitem">100K+ documents<small>Ingestion · Python ETL · embeddings</small></div>
-              <div class="pipeline-step retrieval" role="listitem">Hybrid retrieval<small>BM25 + vector search on Qdrant</small></div>
+              <div class="pipeline-step retrieval" role="listitem">Hybrid retrieval<small>BM25 + vector search on Qdrant</small><div class="retrieval-methods"><div><span>BM25</span><small>Lexical search</small></div><div><span>Vector search</span><small>Semantic retrieval</small></div></div></div>
               <div class="pipeline-step" role="listitem">Re-ranking<small>Retrieval quality &amp; latency evaluation</small></div>
               <div class="pipeline-step" role="listitem">FastAPI inference<small>Containerized AWS Lambda + API Gateway</small></div>
             </div>

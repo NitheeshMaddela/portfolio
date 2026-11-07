@@ -1,20 +1,21 @@
 ---
 name: Nitheesh Maddela
-description: Independent engineering studio portfolio
+description: Graphite engineering studio portfolio
 colors:
-  rust: "#a13f2b"
-  rust-dark: "#7f2f20"
-  paper: "#ffffff"
-  ink: "#252522"
-  secondary: "#62625c"
-  wash: "#f1f1ed"
-  line: "#d6d6ce"
-  selection: "#f1d4c7"
-  field-border: "#92928a"
-  review-line: "#53534c"
-  review-muted: "#d3d3c8"
+  accent: "#e6a17c"
+  accent-hover: "#f4bb99"
+  on-accent: "#181b1f"
+  paper: "#14171b"
+  ink: "#edf0f4"
+  secondary: "#a6b0bb"
+  wash: "#1d2229"
+  line: "#3b4652"
+  line-strong: "#687786"
+  selection: "#634534"
+  workflow-bg: "#222a33"
+  workflow-text: "#d4dbe3"
 typography:
-  display: {fontFamily: "Hanken Grotesk, Segoe UI, sans-serif", fontSize: "clamp(3rem, 7.6vw, 6rem)", fontWeight: 600, lineHeight: 1.08, letterSpacing: "-0.04em"}
+  display: {fontFamily: "Hanken Grotesk, Segoe UI, sans-serif", fontSize: "clamp(3rem, 7.6vw, 6rem)", fontWeight: 550, lineHeight: 1.08, letterSpacing: "-0.04em"}
   headline: {fontFamily: "Hanken Grotesk, Segoe UI, sans-serif", fontSize: "1.8rem", fontWeight: 600, lineHeight: 1.2, letterSpacing: "-0.025em"}
   project-title: {fontFamily: "Hanken Grotesk, Segoe UI, sans-serif", fontSize: "clamp(2rem, 3vw, 2.75rem)", fontWeight: 600, lineHeight: 1.15, letterSpacing: "-0.03em"}
   career-title: {fontFamily: "Hanken Grotesk, Segoe UI, sans-serif", fontSize: "1.25rem", fontWeight: 600, lineHeight: 1.35, letterSpacing: "-0.015em"}
@@ -31,8 +32,8 @@ spacing:
   space-6: "72px"
   space-7: "104px"
 components:
-  button-primary: {backgroundColor: "{colors.rust}", textColor: "{colors.paper}", rounded: "{rounded.square}", padding: "14px 24px"}
-  button-primary-hover: {backgroundColor: "{colors.rust-dark}"}
+  button-primary: {backgroundColor: "{colors.accent}", textColor: "{colors.on-accent}", rounded: "{rounded.square}", padding: "14px 24px"}
+  button-primary-hover: {backgroundColor: "{colors.accent-hover}"}
   button-primary-active: {backgroundColor: "{colors.ink}"}
   button-menu: {textColor: "{colors.ink}", padding: "10px 14px"}
   input: {backgroundColor: "{colors.paper}", textColor: "{colors.ink}", rounded: "{rounded.square}", padding: "12px"}
@@ -43,62 +44,63 @@ components:
 
 ## Overview
 
-**Creative North Star: "Independent engineering studio"**
+**Creative North Star: "Independent engineering studio — graphite edition"**
 
-The Independent engineering studio uses white, charcoal and rust with a broad name masthead, open asymmetric project spreads and compact career rows. Hanken Grotesk carries both display and reading text. Rules, spacing and real system diagrams establish hierarchy.
+The graphite edition preserves the studio’s broad name masthead, open asymmetric project spreads and compact career rows. Graphite surfaces, silver typography and restrained copper accents express the user’s requested technical direction. Hanken Grotesk remains the display and reading face; actual system diagrams carry the technical detail.
 
 The material is flat and direct: square controls, plain technology lists and restrained state changes. The current implementation uses HTML and inline SVG rather than raster imagery. The user selected this world after rejecting the previous AI-generated appearance; gradients, badges and generic card layouts are not binding.
 
 **Key Characteristics:**
 
-- White surfaces, charcoal text and rust emphasis.
+- Graphite surfaces, silver text and copper actions and technical emphasis.
 - One locally served type family with a strong display-to-body contrast.
 - Open spreads, fine rules and square controls.
 - Native disclosure and diagrams of actual system stages.
 
-<!-- Source-derived from index.html. Rendered screenshots and computed-style inspection remain unavailable. Surface review disposition: recapture; this document is not whole-surface ship approval. -->
+<!-- Source-derived from index.html; refreshed for the user-approved graphite/silver/copper refinement. Rendered screenshots and computed-style inspection remain unavailable. Surface review disposition: recapture; this document is not whole-surface ship approval. -->
 
 ## Colors
 
-White and warm charcoal give rust a clear role as the single action and emphasis color. Frontmatter owns the exact values.
+Graphite and silver support copper as the action and technical-emphasis color. Frontmatter owns the exact values. The user explicitly selected this dark treatment; print output remains light.
 
 ### Primary
 
-- **Rust:** Links, primary action, current navigation, employers, outcome figures and retrieval-stage emphasis.
-- **Deep Rust:** Primary button hover.
+- **Copper / Light Copper:** Primary actions, links, active navigation, outcome figures and retrieval emphasis; Light Copper is the primary hover state.
+- **On Copper:** Dark text on the filled copper actions.
 
 ### Neutral
 
-- **White Paper / Warm Charcoal:** Page and field surfaces; main text and the dark workflow field.
-- **Secondary Gray:** Reading copy, metadata and diagram connectors.
-- **Pale Wash / Quiet Line:** Architecture and contact backgrounds; fine dividers and stage borders.
-- **Selection Peach / Field Gray:** Text selection background and form-field borders.
-- **Review Divider / Review Text:** Separators and supporting text on the dark workflow field.
+- **Graphite / Silver:** Page and input surfaces; main reading and heading text.
+- **Secondary Silver:** Supporting copy, dates and stack information.
+- **Raised Graphite / Technical Graphite:** Architecture, contact and agent-workflow surfaces.
+- **Quiet Rule / Strong Rule:** Content dividers and readable component and diagram boundaries.
+- **Copper Selection:** Selected text background, paired with Silver.
+- **Workflow Silver:** Supporting text on the agent workflow.
 
-**The Rust Emphasis Rule.** Use rust for links, current navigation, selected technical emphasis and the primary action; keep reading text charcoal or secondary gray.
+**The Copper Emphasis Rule.** Reserve copper for actions, links, current navigation, measured outcomes and meaningful retrieval emphasis; reading copy stays silver or secondary silver.
 
 ## Typography
 
 **Display Font:** Hanken Grotesk (Segoe UI, sans-serif fallbacks).
 **Body Font:** Hanken Grotesk (same fallbacks).
 
-The variable font is locally served from `assets/fonts/HankenGrotesk-Variable.ttf`, preloaded, with weights (100–900) and `font-display: swap`. Scale and weight distinguish roles; no separate mono face is used. The frontmatter records the reused desktop roles.
+The variable font is locally served from `assets/fonts/HankenGrotesk-Variable.ttf`, preloaded, with weights (100–900) and `font-display: swap`. Scale and weight distinguish roles. A system monospace stack is limited to actual technology strings, dates and measured outcomes; ordinary copy and headings retain Hanken Grotesk. The frontmatter records the reused desktop roles.
 
 The mobile name uses (`clamp(3rem, 12vw, 5.5rem)`) and a narrow measure (9ch). Secondary project titles use (`clamp(1.75rem, 2.5vw, 2.1rem)`); contact headings use (`clamp(2rem, 3.5vw, 3rem)`). Reading copy generally stays within (64–72ch), with supporting text from (0.8rem) to (1.08rem). Dates and outcome figures use tabular numerals. Text keeps natural case.
 
-**The Single Family Rule.** Use Hanken Grotesk across display, body and controls; distinguish roles through scale, weight and spacing.
+**The Single Family Rule.** Use Hanken Grotesk for display, reading copy and controls. Reserve system monospace for actual technology strings, dates and measured outcomes.
 
 ## Layout
 
-The centered container has a maximum width (1184px) and fluid gutters (`clamp(24px, 5vw, 80px)`). The spacing scale is in frontmatter. Main spreads use unequal columns (5fr / 7fr) with a usual gap (72px); the second project reverses them. Career rows use (3fr / 9fr), expertise rows (4fr / 8fr), and credentials two equal columns. Section openings use a charcoal top rule (1px), top padding (32px) and space below (40px).
+The centered container has a maximum width (1184px) and fluid gutters (`clamp(24px, 5vw, 80px)`). The spacing scale is in frontmatter. Main spreads use unequal columns (5fr / 7fr) with a usual gap (72px); the second project reverses them. Career rows use (3fr / 9fr), expertise rows (4fr / 8fr), and credentials two equal columns. Section openings use a Strong Rule top border (1px), top padding (32px) and space below (40px).
 
-At (1000px), main column gaps become (40px), architecture padding becomes (24px) and the workflow becomes vertical. At (760px), major grids stack with (32px) gaps, reversed projects return to document order, career rows stack, and the JavaScript-enabled menu appears. The workflow returns to three columns at this width. At (420px), workflow and form rows stack; metric and evaluation label columns narrow. These behaviors still need rendered confirmation.
+At (1000px), main column gaps become (40px), architecture padding becomes (24px) and the workflow becomes vertical. At (760px), major grids stack with (32px) gaps, reversed projects return to document order, career rows stack, and the JavaScript-enabled menu appears. The workflow remains vertical at narrower widths. At (420px), form rows stack; metric and evaluation label columns narrow. These behaviors still need rendered confirmation.
 
 The desktop header is sticky; on mobile it is sticky only with JavaScript. Without JavaScript navigation remains visible in normal flow. Print styles hide navigation and the form, expand the container and avoid splitting project, career and credential groups.
 
 ## Elevation & Depth
 
-There are no shadows. Whitespace, rules and white, wash and charcoal fields separate content. Positioned mobile navigation uses a bottom rule without an elevation effect.
+There are no shadows. Whitespace, rules and graphite, raised graphite and workflow fields separate content. Positioned mobile navigation uses a bottom rule without an elevation effect.
 
 **The Flat Surface Rule.** Use whitespace, rules and tonal fields to separate content. The implemented system has no shadows.
 
@@ -110,19 +112,19 @@ Controls, fields, diagram stages and evidence regions use square geometry. Input
 
 ### Buttons
 
-Square, direct actions. The primary button uses Rust and White Paper, medium weight (500), minimum height (48px), and frontmatter padding. Hover uses Deep Rust; active uses Warm Charcoal. The transparent Menu control uses a Quiet Line border and minimum height (44px). Text links use rust and a stroke SVG. Links, buttons and summaries have a rust focus outline (2px), offset (5px).
+Square, direct actions. The primary button uses Copper and On Copper, medium weight (500), minimum height (48px), and frontmatter padding. Hover uses Light Copper; active uses Silver with dark text. The transparent Menu control uses a Strong Rule border and minimum height (44px). Text links use copper and a stroke SVG. Links, buttons and summaries have a copper focus outline (2px), offset (5px).
 
 ### Cards / Containers
 
-Open spreads have no surrounding border, radius or shadow. Architecture uses Pale Wash with white, fine-bordered stages; retrieval gets rust emphasis. The workflow uses charcoal with white text, muted descriptions and internal rules. Career history uses ruled rows rather than enclosing cards.
+Open spreads have no surrounding border, radius or shadow. Architecture uses Raised Graphite with page-colored stages, strong outlines and precise connector ports. Retrieval has copper emphasis and parallel BM25/vector paths. The agent workflow uses Technical Graphite, silver text and internal rules. Career history uses ruled rows rather than enclosing cards.
 
 ### Inputs / Fields
 
-White, square fields have a Field Gray border (1px), visible labels and Secondary Gray placeholders. Focus uses a rust outline (2px), offset (2px). The textarea resizes vertically with a minimum height (140px). Validation is native; no custom disabled or error treatment is defined. The form opens an email draft and keeps that explanation visible.
+Graphite, square fields have a Strong Rule border (1px), visible labels and Secondary Silver placeholders. Focus uses a copper outline (2px), offset (2px). The textarea resizes vertically with a minimum height (140px). Validation is native; no custom disabled or error treatment is defined. The form opens an email draft and keeps that explanation visible.
 
 ### Navigation
 
-Plain links use (0.92rem) text and a minimum height (44px). Current-section links use rust and an underline. The mobile menu uses vertical links with minimum height (48px); the live script updates expanded state and closes on selection or Escape.
+Plain links use (0.92rem) text and a minimum height (44px). Current-section links use copper and an underline. The header resume link has a Strong Rule outline; the introductory resume action is filled copper. The mobile menu uses vertical links with minimum height (48px); the live script updates expanded state and closes on selection or Escape.
 
 A locally served, pinned Lenis (1.3.27) instance smooths wheel and trackpad input with interpolation (0.12); touch scrolling stays native. Nested scrolling and zoom gestures are preserved. Section links use the same engine with distance-based timing (900–2200ms), cubic ease-in-out and the CSS scroll-padding value to clear the sticky header. Pointer input, keyboard scrolling and history navigation cancel inertia. Reduced-motion preferences and the skip link use immediate navigation. Hash history and keyboard focus follow the selected section. If the library is unavailable, section links fall back to native browser smooth scrolling.
 
@@ -132,7 +134,7 @@ Native details and summary use a top rule and a minimum summary height (56px). T
 
 ### Architecture Diagram
 
-Actual processing stages form a vertical text list with gaps (28px), narrow connectors and a figure caption. HTML and CSS provide the geometric diagram; no raster imagery is used.
+Actual processing stages form a vertical text list with gaps (28px), narrow connectors, connection ports and a figure caption. Hybrid retrieval exposes parallel lexical BM25 and semantic vector paths. HTML and CSS provide the geometric diagram; no raster imagery is used.
 
 ## Do's and Don'ts
 
